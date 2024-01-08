@@ -11,32 +11,31 @@ redirect_from:
 
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* A.B. in Applied Mathematics, Harvard University, 2024
+* S.M. in Applied Mathematics, Harvard University, 2024
 
 Work experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* Summer 2023: Intern
+  * Built and tested a data pipeline for collecting and storing market data
+  * Designed and prototyped a dashboard to evaluate system performance
+  * Participated in financial mathematics and mock trading classes
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* Summer 2021-2022: Research Assistant
+  * Designed, assembled, and wrote software for a portable electrocardiogram device to collect heart rate and heart rate variability data in birds (N. Hollandicus)
+  * Created MATLAB workflow to filter and analyze avian electrocardiogram time series data using wavelet transforms
+  * Designed a convolutional neural network to classify electrocardiogram signals by activity and stress
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Python
+  * Pandas
+  * Tensorflow
+* MATLAB
+  * Signal Processing Toolkit
+* SQL
 
-Publications
+<!-- Publications
 ======
   <ul>{% for post in site.publications %}
     {% include archive-single-cv.html %}
@@ -46,7 +45,7 @@ Talks
 ======
   <ul>{% for post in site.talks %}
     {% include archive-single-talk-cv.html %}
-  {% endfor %}</ul>
+  {% endfor %}</ul> -->
   
 Teaching
 ======
@@ -54,6 +53,6 @@ Teaching
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-Service and leadership
+<!-- Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+* Currently signed in to 43 different slack teams -->

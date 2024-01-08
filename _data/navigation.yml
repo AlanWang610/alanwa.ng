@@ -11,6 +11,9 @@ main:
     
   - title: "Portfolio"
     url: /portfolio/
+
+    - title: "Workouts"
+    url: /workouts/
         
   - title: "Blog Posts"
     url: /year-archive/
