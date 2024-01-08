@@ -4,7 +4,7 @@ collection: teaching
 type: "Undergraduate course"
 permalink: /teaching/econ-1011b-ca
 venue: "Harvard University, Economics"
-date: Spring 2024
+date: 2024-01-22
 location: "Cambridge, MA"
 ---
 

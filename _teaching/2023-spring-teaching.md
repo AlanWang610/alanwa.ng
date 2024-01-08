@@ -4,7 +4,7 @@ collection: teaching
 type: "Undergraduate course"
 permalink: /teaching/apmth-120-tf
 venue: "Harvard University, Applied Mathematics"
-date: Spring 2023
+date: 2023-01-23
 location: "Cambridge, MA"
 ---
 
