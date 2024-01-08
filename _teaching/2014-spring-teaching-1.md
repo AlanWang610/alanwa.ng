@@ -1,20 +1,11 @@
 ---
-title: "Teaching experience 1"
+title: "APMTH 120 Teaching Fellow"
 collection: teaching
 type: "Undergraduate course"
-permalink: /teaching/2014-spring-teaching-1
-venue: "University 1, Department"
-date: 2014-01-01
-location: "City, Country"
+permalink: /teaching/apmth-120-tf
+venue: "Harvard University, Applied Mathematics"
+date: Spring 2023
+location: "Cambridge, MA"
 ---
 
-This is a description of a teaching experience. You can use markdown like any other post.
-
-Heading 1
-======
-
-Heading 2
-======
-
-Heading 3
-======
+Applied Linear Algebra and Big Data: As a teaching fellow, I held sections and office hours to teach students about dimensionality reduction, supervised learning, and unsupervised learning techniques.
