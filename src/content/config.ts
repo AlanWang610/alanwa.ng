@@ -8,7 +8,6 @@ const essays = defineCollection({
     readTime: z.string(),
     featured: z.boolean().default(false),
     summary: z.string(),
-    description: z.string().optional(),
   }),
 });
 

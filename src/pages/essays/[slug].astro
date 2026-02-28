@@ -20,7 +20,7 @@ function formatDate(date: Date): string {
 
 <BaseLayout
   title={`${essay.data.title} — Sun & Steel`}
-  description={essay.data.description || essay.data.summary}
+  description={essay.data.summary}
   canonicalPath={`/essays/${essay.slug}/`}
 >
   <div class="page">
@@ -31,7 +31,7 @@ function formatDate(date: Date): string {
         </a>
       </div>
 
-      <h1 class="page-title">{essay.data.title}</h1>
+      <h1 class="page-title" set:html={essay.data.title} />
       <div class="eyebrow" style="margin-bottom:var(--space-5);">
         {formatDate(essay.data.date)} &middot; {essay.data.readTime}
       </div>

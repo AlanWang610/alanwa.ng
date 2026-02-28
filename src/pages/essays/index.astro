@@ -23,8 +23,7 @@ function formatDate(date: Date): string {
     <div class="container">
       <h1 class="page-title">Essays</h1>
       <p class="page-intro">
-        Writing treated as one instrument among others. Prose as an object that should
-        withstand scrutiny, not as a cloud of personality.
+        I believe writing is the best way to maintain executive function and critical thinking skills in an environment of <a href="https://www.media.mit.edu/projects/your-brain-on-chatgpt/overview/" target="_blank" rel="noopener noreferrer">cognitive offloading</a>.
       </p>
 
       {featured && (
@@ -33,7 +32,7 @@ function formatDate(date: Date): string {
             <span class="sun-disk" style="width:6px;height:6px;"></span>
             Featured
           </div>
-          <div class="essay-item__title" style="font-size:22px;">{featured.data.title}</div>
+          <div class="essay-item__title" style="font-size:22px;" set:html={featured.data.title} />
           <div class="essay-item__meta tnum">
             {formatDate(featured.data.date)} &middot; {featured.data.readTime}
           </div>
@@ -46,7 +45,7 @@ function formatDate(date: Date): string {
       <div>
         {rest.map((e) => (
           <a href={`/essays/${e.slug}/`} class="essay-list-item">
-            <div class="essay-item__title">{e.data.title}</div>
+            <div class="essay-item__title" set:html={e.data.title} />
             <div class="essay-item__meta tnum">
               {formatDate(e.data.date)} &middot; {e.data.readTime}
             </div>
