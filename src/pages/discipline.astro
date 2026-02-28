@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import DisciplineList from '../components/DisciplineList.tsx';
+import workouts from '../data/workouts.json';
+
+const allTags = [...new Set(workouts.flatMap((w) => w.tags))];
+---
+
+<BaseLayout
+  title="Discipline — Sun & Steel"
+  description="Training structured around distance running with supplementary strength work. Session record with external corroboration."
+  canonicalPath="/discipline/"
+>
+  <div class="page">
+    <div class="container">
+      <h1 class="page-title">Discipline</h1>
+      <p class="page-intro">
+        Training structured around distance running with supplementary strength work.
+        No computed analytics—only the session record and its external corroboration.
+        Each entry links to the route or activity on MapMyRun.
+      </p>
+
+      <DisciplineList workouts={workouts} tags={allTags} client:load />
+    </div>
+  </div>
+</BaseLayout>

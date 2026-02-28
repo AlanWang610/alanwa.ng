@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const essays = await getCollection('essays');
+  return essays.map((essay) => ({
+    params: { slug: essay.slug },
+    props: { essay },
+  }));
+}
+
+const { essay } = Astro.props;
+const { Content } = await essay.render();
+
+function formatDate(date: Date): string {
+  return date.toISOString().split('T')[0];
+}
+---
+
+<BaseLayout
+  title={`${essay.data.title} — Sun & Steel`}
+  description={essay.data.description || essay.data.summary}
+  canonicalPath={`/essays/${essay.slug}/`}
+>
+  <div class="page">
+    <div class="container">
+      <div style="margin-bottom:var(--space-4);">
+        <a href="/essays/" style="font-size:13px;text-transform:uppercase;letter-spacing:0.06em;font-weight:600;">
+          &larr; All Essays
+        </a>
+      </div>
+
+      <h1 class="page-title">{essay.data.title}</h1>
+      <div class="eyebrow" style="margin-bottom:var(--space-5);">
+        {formatDate(essay.data.date)} &middot; {essay.data.readTime}
+      </div>
+
+      <div class="essay-body">
+        <Content />
+      </div>
+    </div>
+  </div>
+</BaseLayout>

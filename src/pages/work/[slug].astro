@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await project.render();
+---
+
+<BaseLayout
+  title={`${project.data.title} — Sun & Steel`}
+  description={project.data.description || project.data.summary}
+  canonicalPath={`/work/${project.slug}/`}
+>
+  <div class="page">
+    <div class="container">
+      <div style="margin-bottom:var(--space-4);">
+        <a href="/work/" style="font-size:13px;text-transform:uppercase;letter-spacing:0.06em;font-weight:600;">
+          &larr; All Work
+        </a>
+      </div>
+
+      <h1 class="page-title">{project.data.title}</h1>
+      <div class="eyebrow" style="margin-bottom:var(--space-5);">
+        {project.data.tags.join(' · ')} &middot; {project.data.year}
+      </div>
+
+      <div class="project-body">
+        <Content />
+      </div>
+    </div>
+  </div>
+</BaseLayout>

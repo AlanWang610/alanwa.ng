@@ -1,0 +1,74 @@
+[
+  {
+    "date": "2026-02-24",
+    "title": "Long Run — River Trail",
+    "distance": "14.2 mi",
+    "duration": "1:52:30",
+    "link": "#",
+    "note": "Negative split, last 5K at tempo",
+    "tags": ["Run"]
+  },
+  {
+    "date": "2026-02-22",
+    "title": "Intervals — Track",
+    "distance": "8.0 mi",
+    "duration": "1:04:15",
+    "link": "#",
+    "note": "8×800m @ 3:05 avg, 200m jog recovery",
+    "tags": ["Run"]
+  },
+  {
+    "date": "2026-02-20",
+    "title": "Easy Recovery",
+    "distance": "5.1 mi",
+    "duration": "45:20",
+    "link": "#",
+    "note": "",
+    "tags": ["Recovery"]
+  },
+  {
+    "date": "2026-02-18",
+    "title": "Tempo — Urban Loop",
+    "distance": "10.0 mi",
+    "duration": "1:15:40",
+    "link": "#",
+    "note": "Miles 3–8 at 6:55/mi",
+    "tags": ["Run"]
+  },
+  {
+    "date": "2026-02-16",
+    "title": "Hill Repeats — Cemetery Ridge",
+    "distance": "7.3 mi",
+    "duration": "1:02:10",
+    "link": "#",
+    "note": "6× hill, 90s recovery",
+    "tags": ["Run"]
+  },
+  {
+    "date": "2026-02-14",
+    "title": "Long Run — Coastal Path",
+    "distance": "16.0 mi",
+    "duration": "2:08:45",
+    "link": "#",
+    "note": "Wind advisory; adjusted pace",
+    "tags": ["Run"]
+  },
+  {
+    "date": "2026-02-12",
+    "title": "Strength — Compound Lifts",
+    "distance": "—",
+    "duration": "1:10:00",
+    "link": "#",
+    "note": "Squat / Deadlift / Press cycle",
+    "tags": ["Strength"]
+  },
+  {
+    "date": "2026-02-10",
+    "title": "Easy Recovery",
+    "distance": "4.8 mi",
+    "duration": "42:50",
+    "link": "#",
+    "note": "",
+    "tags": ["Recovery"]
+  }
+]

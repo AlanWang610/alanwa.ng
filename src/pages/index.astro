@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+---
+
+<BaseLayout title="Form — The 王站" canonicalPath="/">
+  <div class="page" style="padding-top:var(--space-4);">
+    <div class="container">
+      <div class="hero" style="padding-top:var(--space-3);padding-bottom:var(--space-4);">
+        <h1 class="hero__name">Alan Wang</h1>
+        <div class="hero__current" style="margin-top:var(--space-4);">
+          <span class="eyebrow" style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+            <span class="sun-disk" style="width:6px;height:6px;"></span>
+            Present focus
+          </span>
+          <p>
+            Creating tools for the social sciences; teaching economics; writing about healthcare and identity; building community in San Francisco, Alta California
+          </p>
+        </div>
+      </div>
+
+      <SectionHeading text="Biography" />
+      <div class="bio" style="margin-bottom:0;">
+        <p>
+          I'm building <a href="https://www.tryintera.com/" target="_blank" rel="noopener noreferrer">Intera</a>, a synthetic persona generation tool for healthcare and market research. I'm also interested in modernizing campaigning software and local journalism.
+        </p>
+        <p>
+          Before, I was a predoctoral research fellow at MIT Sloan working on cryptocurrency and consumer finance. I studied applied mathematics and economics at Harvard College (AB/SM).
+        </p>
+        <p>
+          Most mornings and weekends, I'm usually doing some combination of running, biking, swimming, and weightlifting.
+        </p>
+        <p>
+          At Harvard, I worked on consulting projects with <a href="https://harvardanalytics.org/" target="_blank" rel="noopener noreferrer">HDAG</a> and ran an introductory Python bootcamp with <a href="https://www.hodp.org/" target="_blank" rel="noopener noreferrer">HODP</a> each semester. Outside of school, I led workouts with <a href="http://harvardrunningclub.com/" target="_blank" rel="noopener noreferrer">HCRC</a>, participated in <a href="https://www.harvardaadt.org/" target="_blank" rel="noopener noreferrer">AADT</a>, and taught at <a href="https://www.chinatownaccess.org/" target="_blank" rel="noopener noreferrer">Chinatown ACCESS</a>.
+        </p>
+        <p>
+          In previous summers, I conducted biomechanics research with the <a href="https://biewenerlab.oeb.harvard.edu/" target="_blank" rel="noopener noreferrer">Biewener Lab</a> on physiological responses to exertion in cockatiels (<em>Nymphicus Hollandicus</em>). I also interned at a quantitative trading firm.
+        </p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,61 @@
+---
+import ThemeToggle from './ThemeToggle.tsx';
+import MobileNav from './MobileNav.tsx';
+
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
+
+const NAV_ITEMS = [
+  { label: 'Form', path: '/' },
+  { label: 'Discipline', path: '/discipline/' },
+  { label: 'Instruction', path: '/instruction/' },
+  { label: 'Work', path: '/work/' },
+  { label: 'Essays', path: '/essays/' },
+  { label: 'Photography', path: '/photography/' },
+  { label: 'Reading Log', path: '/reading-log/' },
+];
+
+function isActive(navPath: string, current: string): boolean {
+  if (navPath === '/') return current === '/' || current === '';
+  return current.startsWith(navPath);
+}
+---
+
+<header class="header">
+  <div class="container header__inner">
+    <a href="/" class="header__mark" aria-label="Home">
+      <span>The 王站</span>
+    </a>
+
+    <nav class="header__nav" aria-label="Main navigation">
+      {NAV_ITEMS.map((item) => (
+        <a
+          href={item.path}
+          class={`header__nav-link ${isActive(item.path, currentPath) ? 'header__nav-link--active' : ''}`}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="header__right">
+      <div class="header__social">
+        <a href="https://github.com/AlanWang610" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" /></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/alanwang2024/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg>
+        </a>
+        <a href="https://www.youtube.com/channel/UCtxHcguyCi5ufBJXPDU4YjA" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z" /><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" /></svg>
+        </a>
+      </div>
+      <div class="header__divider header__social"></div>
+      <ThemeToggle client:load />
+      <MobileNav currentPath={currentPath} navItems={NAV_ITEMS} client:load />
+    </div>
+  </div>
+</header>

@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const essays = await getCollection('essays');
+const sorted = essays.sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+);
+const featured = sorted.find((e) => e.data.featured);
+const rest = sorted.filter((e) => !e.data.featured);
+
+function formatDate(date: Date): string {
+  return date.toISOString().split('T')[0];
+}
+---
+
+<BaseLayout
+  title="Essays — Sun & Steel"
+  description="Writing treated as one instrument among others. Prose as an object that should withstand scrutiny."
+  canonicalPath="/essays/"
+>
+  <div class="page">
+    <div class="container">
+      <h1 class="page-title">Essays</h1>
+      <p class="page-intro">
+        Writing treated as one instrument among others. Prose as an object that should
+        withstand scrutiny, not as a cloud of personality.
+      </p>
+
+      {featured && (
+        <a href={`/essays/${featured.slug}/`} class="essay-featured">
+          <div class="eyebrow" style="margin-bottom:12px;display:flex;align-items:center;gap:8px;">
+            <span class="sun-disk" style="width:6px;height:6px;"></span>
+            Featured
+          </div>
+          <div class="essay-item__title" style="font-size:22px;">{featured.data.title}</div>
+          <div class="essay-item__meta tnum">
+            {formatDate(featured.data.date)} &middot; {featured.data.readTime}
+          </div>
+          <div class="essay-item__summary" style="margin-top:8px;">
+            {featured.data.summary}
+          </div>
+        </a>
+      )}
+
+      <div>
+        {rest.map((e) => (
+          <a href={`/essays/${e.slug}/`} class="essay-list-item">
+            <div class="essay-item__title">{e.data.title}</div>
+            <div class="essay-item__meta tnum">
+              {formatDate(e.data.date)} &middot; {e.data.readTime}
+            </div>
+            <div class="essay-item__summary">{e.data.summary}</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</BaseLayout>

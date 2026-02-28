@@ -1,0 +1,65 @@
+{
+  "current": [
+    {
+      "title": "The Craftsman",
+      "author": "Richard Sennett",
+      "note": "On the relationship between hand and mind in skilled practice."
+    },
+    {
+      "title": "Ornament and Crime",
+      "author": "Adolf Loos",
+      "note": ""
+    }
+  ],
+  "completed": {
+    "2025": [
+      {
+        "title": "Sun and Steel",
+        "author": "Yukio Mishima",
+        "note": "The body as corrective to abstraction. Central to this site's design philosophy."
+      },
+      {
+        "title": "The Timeless Way of Building",
+        "author": "Christopher Alexander",
+        "note": "Pattern language as living structure."
+      },
+      {
+        "title": "Seeing Like a State",
+        "author": "James C. Scott",
+        "note": "Legibility as power; the costs of imposed order."
+      },
+      {
+        "title": "In Praise of Shadows",
+        "author": "Jun'ichirō Tanizaki",
+        "note": "The aesthetics of darkness and texture against Western illumination."
+      },
+      {
+        "title": "The Shape of Design",
+        "author": "Frank Chimero",
+        "note": ""
+      }
+    ],
+    "2024": [
+      {
+        "title": "Finite and Infinite Games",
+        "author": "James P. Carse",
+        "note": "Discipline as finite game; practice as infinite."
+      },
+      {
+        "title": "The Poetics of Space",
+        "author": "Gaston Bachelard",
+        "note": ""
+      },
+      {
+        "title": "Hackers & Painters",
+        "author": "Paul Graham",
+        "note": "Craft as the through-line between making software and making art."
+      },
+      {
+        "title": "Meditations",
+        "author": "Marcus Aurelius",
+        "note": ""
+      }
+    ]
+  }
+}

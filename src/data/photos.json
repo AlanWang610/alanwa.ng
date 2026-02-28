@@ -1,0 +1,11 @@
+[
+  { "id": 1, "aspect": 1.5, "caption": "Concrete formwork, morning light — Tōkyō" },
+  { "id": 2, "aspect": 0.75, "caption": "Steel cable detail — suspension bridge" },
+  { "id": 3, "aspect": 1.33, "caption": "Salt flat, midday — Bonneville" },
+  { "id": 4, "aspect": 0.67, "caption": "Stairwell geometry — Brutalist housing block" },
+  { "id": 5, "aspect": 1.5, "caption": "Fog burning off a ridge — coastal range" },
+  { "id": 6, "aspect": 1.0, "caption": "Typeface proof sheet — letterpress studio" },
+  { "id": 7, "aspect": 0.8, "caption": "Rebar grid before pour" },
+  { "id": 8, "aspect": 1.4, "caption": "Empty track, 6 AM — municipal stadium" },
+  { "id": 9, "aspect": 1.2, "caption": "Rusted I-beam cross section" }
+]

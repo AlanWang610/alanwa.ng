@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WorkGrid from '../../components/WorkGrid.tsx';
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('projects');
+const allTags = [...new Set(projects.flatMap((p) => p.data.tags))];
+
+const serialized = projects.map((p) => ({
+  slug: p.slug,
+  title: p.data.title,
+  tags: p.data.tags,
+  year: p.data.year,
+  summary: p.data.summary,
+  featured: p.data.featured ?? false,
+}));
+---
+
+<BaseLayout
+  title="Work — Sun & Steel"
+  description="Selected projects structured as problem, constraints, approach, and outcome."
+  canonicalPath="/work/"
+>
+  <div class="page">
+    <div class="container">
+      <h1 class="page-title">Work</h1>
+      <p class="page-intro">
+        Selected projects. Each structured as problem, constraints, approach, and outcome.
+        Links terminate in real artifacts where available.
+      </p>
+
+      <WorkGrid projects={serialized} tags={allTags} client:load />
+    </div>
+  </div>
+</BaseLayout>
