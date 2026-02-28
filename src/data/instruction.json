@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Economics 10B: Principles of Economics (Macroeconomics)",
+    "semester": "Spring 2025",
+    "link": "https://laibson.scholars.harvard.edu/class/ec-10b-principles-economics-macroeconomics",
+    "note": "Macroeconomic models, policy analysis, and business cycles"
+  },
+  {
+    "title": "Economics 10A: Principles of Economics (Microeconomics)",
+    "semester": "Fall 2024",
+    "link": "https://laibson.scholars.harvard.edu/class/ec10a-principles-economics-microeconomics",
+    "note": "Microeconomic models, public policy, and ethics"
+  },
+  {
+    "title": "Economics 1011B: Intermediate Macroeconomics: Advanced",
+    "semester": "Spring 2024",
+    "link": "https://chodorowreich.scholars.harvard.edu/class/economics-1011b-intermediate-macroeconomics",
+    "note": "Theory of economic growth, business cycles, price dynamics, and fiscal and monetary policy"
+  },
+  {
+    "title": "Applied Mathematics 120: Applied Linear Algebra and Big Data",
+    "semester": "Spring 2023",
+    "link": "https://qrd.college.harvard.edu/directory/apmth-120/",
+    "note": "Linear algebra and machine learning for data science"
+  }
+]
