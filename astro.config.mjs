@@ -3,7 +3,7 @@ import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://example.github.io',
+  site: 'https://alanwa.ng',
   output: 'static',
   integrations: [react(), sitemap()],
   build: {
