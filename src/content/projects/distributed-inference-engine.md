@@ -1,10 +1,9 @@
 ---
-title: "Distributed Inference Engine"
-tags: ["Systems", "ML"]
-year: "2025"
-summary: "Low-latency inference routing across heterogeneous GPU clusters. Reduced p99 latency by 40% under load."
+title: "Avian Electrocardiogram"
+tags: ["Embedded Systems"]
+year: "2021"
+summary: "Arduino-based avian electrocardiogram"
 featured: true
-description: "Low-latency inference routing across heterogeneous GPU clusters."
 ---
 
 ## Problem

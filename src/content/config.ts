@@ -19,7 +19,6 @@ const projects = defineCollection({
     year: z.string(),
     summary: z.string(),
     featured: z.boolean().default(false),
-    description: z.string().optional(),
   }),
 });
 
