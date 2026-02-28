@@ -43,15 +43,17 @@ export default function DisciplineList({ workouts, tags }: Props) {
             <div>
               <div className="workout-row__title">{w.title}</div>
               {w.note && <div className="workout-row__note">{w.note}</div>}
-              <a
-                href={w.link}
-                className="workout-row__link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                MapMyRun
-                <ExternalIcon />
-              </a>
+              {w.link && (
+                <a
+                  href={w.link}
+                  className="workout-row__link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {new URL(w.link).hostname.replace(/^www\./, '').split('.')[0]}
+                  <ExternalIcon />
+                </a>
+              )}
             </div>
             <div className="workout-row__stats tnum">
               {w.distance !== '—' && <span>{w.distance}</span>}

@@ -67,7 +67,7 @@
     "title": "Squat",
     "distance": "3x8",
     "duration": "Horizontal Day",
-    "link": "#",
+    "link": "",
     "note": "",
     "tags": ["Strength"]
   },
@@ -75,7 +75,7 @@
     "title": "Bench Press",
     "distance": "3x8",
     "duration": "Horizontal Day",
-    "link": "#",
+    "link": "",
     "note": "",
     "tags": ["Strength"]
   },
@@ -83,7 +83,7 @@
     "title": "Rows",
     "distance": "3x8",
     "duration": "Horizontal Day",
-    "link": "#",
+    "link": "",
     "note": "",
     "tags": ["Strength"]
   },
@@ -91,7 +91,7 @@
     "title": "Deadlift",
     "distance": "3x8",
     "duration": "Vertical Day",
-    "link": "#",
+    "link": "",
     "note": "",
     "tags": ["Strength"]
   },
@@ -99,7 +99,7 @@
     "title": "Overhead Press",
     "distance": "3x8",
     "duration": "Vertical Day",
-    "link": "#",
+    "link": "",
     "note": "",
     "tags": ["Strength"]
   },
@@ -107,7 +107,7 @@
     "title": "Pullups",
     "distance": "3x8",
     "duration": "Vertical Day",
-    "link": "#",
+    "link": "",
     "note": "",
     "tags": ["Strength"]
   }
