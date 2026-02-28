@@ -1211,55 +1211,6 @@ button:focus-visible {
   right: var(--space-2);
 }
 
-/* ── Reading Log ── */
-
-.reading-section {
-  margin-bottom: var(--space-5);
-}
-
-.book-entry {
-  display: flex;
-  gap: var(--space-3);
-  padding: var(--space-3) 0;
-  border-left: 2px solid var(--accent-2);
-  padding-left: var(--space-3);
-}
-
-.book-entry--completed {
-  border-left-color: var(--border);
-}
-
-.book-entry__title {
-  font-weight: 600;
-  font-size: 15px;
-}
-
-.book-entry__author {
-  font-size: 13px;
-  color: var(--muted-text);
-  margin-top: 2px;
-}
-
-.book-entry__note {
-  font-size: 13px;
-  color: var(--muted-text);
-  line-height: 1.6;
-  margin-top: 4px;
-  font-style: italic;
-}
-
-.year-heading {
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-weight: 600;
-  color: var(--muted-text);
-  margin-bottom: var(--space-2);
-  margin-top: var(--space-4);
-  padding-bottom: var(--space-1);
-  border-bottom: 1px solid var(--border);
-}
-
 /* ── 404 ── */
 
 .four04 {

@@ -1,7 +1,42 @@
 ---
+import { getImage } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PhotoGrid from '../components/PhotoGrid.tsx';
-import photos from '../data/photos.json';
+import photosData from '../data/photos.json';
+
+const allImages = import.meta.glob<{ default: ImageMetadata }>(
+  '../assets/photos/*.JPG',
+  { eager: true }
+);
+
+const photos = await Promise.all(
+  photosData.map(async ({ file, caption }) => {
+    const raw = allImages[`../assets/photos/${file}`].default;
+
+    const preview = await getImage({
+      src: raw,
+      widths: [320, 640, 960, 1280],
+      format: 'avif',
+      quality: 65,
+    });
+
+    const full = await getImage({
+      src: raw,
+      width: 2560,
+      format: 'avif',
+      quality: 80,
+    });
+
+    return {
+      caption,
+      src: preview.src,
+      srcset: preview.srcSet.attribute,
+      width: Number(preview.attributes.width),
+      height: Number(preview.attributes.height),
+      fullSrc: full.src,
+    };
+  })
+);
 ---
 
 <BaseLayout
@@ -13,7 +48,7 @@ import photos from '../data/photos.json';
     <div class="container">
       <h1 class="page-title">Photography</h1>
       <p class="page-intro">
-        Material surfaces, structural repetition, and the meeting of light with engineered form.
+        I believe in training the <a href="https://www.media.mit.edu/projects/gender-shades/overview/" target="_blank" rel="noopener noreferrer">algorithmic gaze</a> on diverse, real-world data.
       </p>
 
       <PhotoGrid photos={photos} client:visible />

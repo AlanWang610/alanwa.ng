@@ -2,10 +2,12 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { CloseIcon, ChevronLeft, ChevronRight } from './icons';
 
 interface Photo {
-  id: number;
-  aspect: number;
   caption: string;
-  src?: string;
+  src: string;
+  srcset: string;
+  width: number;
+  height: number;
+  fullSrc: string;
 }
 
 interface Props {
@@ -14,28 +16,39 @@ interface Props {
 
 export default function PhotoGrid({ photos }: Props) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [lightboxSrc, setLightboxSrc] = useState('');
   const triggerRef = useRef<HTMLDivElement | null>(null);
   const dialogRef = useRef<HTMLDivElement | null>(null);
 
   const open = (index: number, el: HTMLDivElement) => {
     triggerRef.current = el;
     setLightboxIndex(index);
+    setLightboxSrc(photos[index].fullSrc);
   };
 
   const close = useCallback(() => {
     setLightboxIndex(null);
+    setLightboxSrc('');
     triggerRef.current?.focus();
   }, []);
 
   const next = useCallback(() => {
-    setLightboxIndex((i) => (i !== null ? (i + 1) % photos.length : null));
-  }, [photos.length]);
+    setLightboxIndex((i) => {
+      if (i === null) return null;
+      const next = (i + 1) % photos.length;
+      setLightboxSrc(photos[next].fullSrc);
+      return next;
+    });
+  }, [photos]);
 
   const prev = useCallback(() => {
-    setLightboxIndex((i) =>
-      i !== null ? (i - 1 + photos.length) % photos.length : null,
-    );
-  }, [photos.length]);
+    setLightboxIndex((i) => {
+      if (i === null) return null;
+      const prev = (i - 1 + photos.length) % photos.length;
+      setLightboxSrc(photos[prev].fullSrc);
+      return prev;
+    });
+  }, [photos]);
 
   useEffect(() => {
     if (lightboxIndex === null) return;
@@ -83,7 +96,7 @@ export default function PhotoGrid({ photos }: Props) {
       <div className="masonry">
         {photos.map((photo, i) => (
           <div
-            key={photo.id}
+            key={photo.src}
             className="masonry__item"
             tabIndex={0}
             role="button"
@@ -96,41 +109,22 @@ export default function PhotoGrid({ photos }: Props) {
               }
             }}
           >
-            {photo.src ? (
+            <picture>
+              <source
+                type="image/avif"
+                srcSet={photo.srcset}
+                sizes="(max-width: 540px) 100vw, (max-width: 900px) 50vw, 33vw"
+              />
               <img
                 className="masonry__img"
                 src={photo.src}
                 alt={photo.caption}
+                width={photo.width}
+                height={photo.height}
                 loading="lazy"
-                style={{ aspectRatio: `${photo.aspect}` }}
+                decoding="async"
               />
-            ) : (
-              <div
-                className="masonry__placeholder"
-                style={{ paddingBottom: `${(1 / photo.aspect) * 100}%` }}
-              >
-                <svg
-                  viewBox="0 0 80 80"
-                  style={{
-                    position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    transform: 'translate(-50%, -50%)',
-                    width: 40,
-                    height: 40,
-                    opacity: 0.15,
-                  }}
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1"
-                >
-                  <rect x="8" y="8" width="64" height="64" rx="2" />
-                  <circle cx="28" cy="28" r="6" />
-                  <polyline points="8,56 28,36 48,56" />
-                  <polyline points="44,48 56,36 72,52" />
-                </svg>
-              </div>
-            )}
+            </picture>
             <div className="masonry__caption">{photo.caption}</div>
           </div>
         ))}
@@ -166,20 +160,7 @@ export default function PhotoGrid({ photos }: Props) {
           </button>
 
           <div className="lightbox-content">
-            {currentPhoto.src ? (
-              <img src={currentPhoto.src} alt={currentPhoto.caption} />
-            ) : (
-              <div
-                style={{
-                  width: 400,
-                  maxWidth: '80vw',
-                  aspectRatio: `${currentPhoto.aspect}`,
-                  background:
-                    'linear-gradient(135deg, var(--photo-placeholder-a), var(--photo-placeholder-b))',
-                  borderRadius: 'var(--radius-1)',
-                }}
-              />
-            )}
+            <img src={lightboxSrc} alt={currentPhoto.caption} />
             <div className="lightbox-caption">{currentPhoto.caption}</div>
           </div>
 

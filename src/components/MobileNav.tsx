@@ -4,6 +4,7 @@ import { MenuIcon, CloseIcon, GithubIcon, LinkedInIcon, YoutubeIcon } from './ic
 interface NavItem {
   label: string;
   path: string;
+  external?: boolean;
 }
 
 interface Props {
@@ -40,8 +41,9 @@ export default function MobileNav({ currentPath, navItems }: Props) {
           <a
             key={item.path}
             href={item.path}
-            className={`mobile-drawer__link ${isActive(item.path, currentPath) ? 'mobile-drawer__link--active' : ''}`}
+            className={`mobile-drawer__link ${!item.external && isActive(item.path, currentPath) ? 'mobile-drawer__link--active' : ''}`}
             onClick={() => setOpen(false)}
+            {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
           >
             {item.label}
           </a>

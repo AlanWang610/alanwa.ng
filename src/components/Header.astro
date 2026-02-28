@@ -15,7 +15,7 @@ const NAV_ITEMS = [
   { label: 'Work', path: '/work/' },
   { label: 'Essays', path: '/essays/' },
   { label: 'Photography', path: '/photography/' },
-  { label: 'Reading Log', path: '/reading-log/' },
+  { label: 'Reading Log', path: 'https://www.goodreads.com/user/show/135334538-alan-wang', external: true },
 ];
 
 function isActive(navPath: string, current: string): boolean {
@@ -34,7 +34,8 @@ function isActive(navPath: string, current: string): boolean {
       {NAV_ITEMS.map((item) => (
         <a
           href={item.path}
-          class={`header__nav-link ${isActive(item.path, currentPath) ? 'header__nav-link--active' : ''}`}
+          class={`header__nav-link ${!item.external && isActive(item.path, currentPath) ? 'header__nav-link--active' : ''}`}
+          {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
         >
           {item.label}
         </a>

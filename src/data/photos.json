@@ -1,11 +1,12 @@
 [
-  { "id": 1, "aspect": 1.5, "caption": "Concrete formwork, morning light — Tōkyō" },
-  { "id": 2, "aspect": 0.75, "caption": "Steel cable detail — suspension bridge" },
-  { "id": 3, "aspect": 1.33, "caption": "Salt flat, midday — Bonneville" },
-  { "id": 4, "aspect": 0.67, "caption": "Stairwell geometry — Brutalist housing block" },
-  { "id": 5, "aspect": 1.5, "caption": "Fog burning off a ridge — coastal range" },
-  { "id": 6, "aspect": 1.0, "caption": "Typeface proof sheet — letterpress studio" },
-  { "id": 7, "aspect": 0.8, "caption": "Rebar grid before pour" },
-  { "id": 8, "aspect": 1.4, "caption": "Empty track, 6 AM — municipal stadium" },
-  { "id": 9, "aspect": 1.2, "caption": "Rusted I-beam cross section" }
+  { "file": "DSCF0285.JPG", "caption": "anachronism" },
+  { "file": "DSCF0549.JPG", "caption": "lavender fields" },
+  { "file": "DSCF0824.JPG", "caption": "giant ping pong was actually a bad idea" },
+  { "file": "DSCF0841.JPG", "caption": "renovations at pika" },
+  { "file": "DSCF4721.JPG", "caption": "georgetown part 1" },
+  { "file": "DSCF4860.JPG", "caption": "georgetown part 2" },
+  { "file": "DSCF8007.JPG", "caption": "sea slater" },
+  { "file": "DSCF8435.JPG", "caption": "西瓜甜不甜？" },
+  { "file": "DSCF9265.JPG", "caption": "a system in dynamic equilibrium, when subjected to an external stress, will adjust to counteract that stress and establish a new equilibrium" },
+  { "file": "DSCF9624.JPG", "caption": "food only, no art" }
 ]
