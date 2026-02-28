@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { ExternalIcon } from './icons';
 
 interface Workout {
-  date: string;
   title: string;
   distance: string;
   duration: string;
@@ -41,7 +40,6 @@ export default function DisciplineList({ workouts, tags }: Props) {
       <div>
         {filtered.map((w, i) => (
           <div className="workout-row" key={i}>
-            <div className="workout-row__date tnum">{w.date}</div>
             <div>
               <div className="workout-row__title">{w.title}</div>
               {w.note && <div className="workout-row__note">{w.note}</div>}

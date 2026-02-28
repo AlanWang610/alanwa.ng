@@ -228,7 +228,7 @@ img { display: block; max-width: 100%; }
 }
 
 /* ── Hero ── */
-.hero { padding: var(--space-6) 0 var(--space-5); }
+.hero { padding: 0 0 var(--space-5); }
 .hero__name { font-size: clamp(28px, 5vw, 42px); font-weight: 700; line-height: 1.15; margin-bottom: var(--space-2); }
 .hero__thesis { font-size: 17px; line-height: 1.65; color: var(--muted-text); max-width: 640px; margin-bottom: var(--space-4); }
 .hero__current { background: var(--surface); border: 1px solid var(--border); padding: var(--space-3) var(--space-4); border-radius: var(--radius-1); max-width: 640px; }

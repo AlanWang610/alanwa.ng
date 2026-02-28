@@ -1,6 +1,5 @@
 ---
 interface Props {
-  date: string;
   title: string;
   distance: string;
   duration: string;
@@ -8,11 +7,10 @@ interface Props {
   note?: string;
 }
 
-const { date, title, distance, duration, link, note } = Astro.props;
+const { title, distance, duration, link, note } = Astro.props;
 ---
 
 <div class="workout-row">
-  <div class="workout-row__date tnum">{date}</div>
   <div>
     <div class="workout-row__title">{title}</div>
     {note && <div class="workout-row__note">{note}</div>}

@@ -1,74 +1,114 @@
 [
   {
-    "date": "2026-02-24",
-    "title": "Long Run — River Trail",
-    "distance": "14.2 mi",
-    "duration": "1:52:30",
-    "link": "#",
-    "note": "Negative split, last 5K at tempo",
+    "title": "Mystic Lakes",
+    "distance": "14.76 mi",
+    "duration": "",
+    "link": "https://www.mapmyrun.com/routes/view/5875714582/",
+    "note": "Trail run along Alewife Brook",
     "tags": ["Run"]
   },
   {
-    "date": "2026-02-22",
-    "title": "Intervals — Track",
-    "distance": "8.0 mi",
-    "duration": "1:04:15",
-    "link": "#",
-    "note": "8×800m @ 3:05 avg, 200m jog recovery",
+    "title": "Newton Center",
+    "distance": "18.46 mi",
+    "duration": "",
+    "link": "https://www.mapmyrun.com/routes/view/5875719328/",
+    "note": "Heartbreak Hill training loop",
     "tags": ["Run"]
   },
   {
-    "date": "2026-02-20",
-    "title": "Easy Recovery",
-    "distance": "5.1 mi",
-    "duration": "45:20",
+    "title": "Arboretum",
+    "distance": "15.39 mi",
+    "duration": "",
+    "link": "https://www.mapmyrun.com/routes/view/5875727659",
+    "note": "View at Peters Hill",
+    "tags": ["Run"]
+  },
+  {
+    "title": "Fresh Pond",
+    "distance": "6.56 mi",
+    "duration": "",
+    "link": "https://www.mapmyrun.com/routes/view/5875743736/",
+    "note": "Water fountain at the start of the loop",
+    "tags": ["Run"]
+  },
+  {
+    "title": "River West",
+    "distance": "16.20 mi",
+    "duration": "",
+    "link": "https://www.mapmyrun.com/routes/view/5875736464",
+    "note": "Go west",
+    "tags": ["Run"]
+  },
+  {
+    "title": "River East",
+    "distance": "10.30 mi",
+    "duration": "",
+    "link": "https://www.mapmyrun.com/routes/view/5875748614",
+    "note": "Go east",
+    "tags": ["Run"]
+  },
+  {
+    "title": "Wellesley",
+    "distance": "13.43 mi",
+    "duration": "",
+    "link": "https://www.mapmyrun.com/routes/view/6365022790/",
+    "note": "Take the shuttle back for a one-way run",
+    "tags": ["Run"]
+  },
+  {
+    "title": "Walden",
+    "distance": "",
+    "duration": "39.17 mi",
+    "link": "https://www.mapmyrun.com/routes/view/6365015047/",
+    "note": "Swim (or polar plunge) in the middle",
+    "tags": ["Cycle"]
+  },
+  {
+    "title": "Squat",
+    "distance": "3x8",
+    "duration": "Horizontal Day",
     "link": "#",
     "note": "",
-    "tags": ["Recovery"]
-  },
-  {
-    "date": "2026-02-18",
-    "title": "Tempo — Urban Loop",
-    "distance": "10.0 mi",
-    "duration": "1:15:40",
-    "link": "#",
-    "note": "Miles 3–8 at 6:55/mi",
-    "tags": ["Run"]
-  },
-  {
-    "date": "2026-02-16",
-    "title": "Hill Repeats — Cemetery Ridge",
-    "distance": "7.3 mi",
-    "duration": "1:02:10",
-    "link": "#",
-    "note": "6× hill, 90s recovery",
-    "tags": ["Run"]
-  },
-  {
-    "date": "2026-02-14",
-    "title": "Long Run — Coastal Path",
-    "distance": "16.0 mi",
-    "duration": "2:08:45",
-    "link": "#",
-    "note": "Wind advisory; adjusted pace",
-    "tags": ["Run"]
-  },
-  {
-    "date": "2026-02-12",
-    "title": "Strength — Compound Lifts",
-    "distance": "—",
-    "duration": "1:10:00",
-    "link": "#",
-    "note": "Squat / Deadlift / Press cycle",
     "tags": ["Strength"]
   },
   {
-    "date": "2026-02-10",
-    "title": "Easy Recovery",
-    "distance": "4.8 mi",
-    "duration": "42:50",
+    "title": "Bench Press",
+    "distance": "3x8",
+    "duration": "Horizontal Day",
     "link": "#",
     "note": "",
-    "tags": ["Recovery"]
+    "tags": ["Strength"]
+  },
+  {
+    "title": "Rows",
+    "distance": "3x8",
+    "duration": "Horizontal Day",
+    "link": "#",
+    "note": "",
+    "tags": ["Strength"]
+  },
+  {
+    "title": "Deadlift",
+    "distance": "3x8",
+    "duration": "Vertical Day",
+    "link": "#",
+    "note": "",
+    "tags": ["Strength"]
+  },
+  {
+    "title": "Overhead Press",
+    "distance": "3x8",
+    "duration": "Vertical Day",
+    "link": "#",
+    "note": "",
+    "tags": ["Strength"]
+  },
+  {
+    "title": "Pullups",
+    "distance": "3x8",
+    "duration": "Vertical Day",
+    "link": "#",
+    "note": "",
+    "tags": ["Strength"]
   }
 ]

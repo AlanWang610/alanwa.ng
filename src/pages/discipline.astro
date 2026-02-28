@@ -15,9 +15,9 @@ const allTags = [...new Set(workouts.flatMap((w) => w.tags))];
     <div class="container">
       <h1 class="page-title">Discipline</h1>
       <p class="page-intro">
-        Training structured around distance running with supplementary strength work.
-        No computed analytics—only the session record and its external corroboration.
-        Each entry links to the route or activity on MapMyRun.
+        I believe in cultivating the body daily through a combination of cardiovascular and strength training.
+        Run and cycle more during the summer, swim and lift more during the winter.
+        Here's a list of my favorite places to go to.
       </p>
 
       <DisciplineList workouts={workouts} tags={allTags} client:load />

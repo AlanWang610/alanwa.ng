@@ -744,7 +744,7 @@ button:focus-visible {
 
 .workout-row {
   display: grid;
-  grid-template-columns: 100px 1fr auto;
+  grid-template-columns: 1fr auto;
   gap: var(--space-3);
   padding: var(--space-3) 0;
   border-bottom: 1px solid var(--border);
@@ -753,12 +753,6 @@ button:focus-visible {
 
 .workout-row:first-child {
   border-top: 1px solid var(--border);
-}
-
-.workout-row__date {
-  font-size: 13px;
-  color: var(--muted-text);
-  white-space: nowrap;
 }
 
 .workout-row__title {
