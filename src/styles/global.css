@@ -657,6 +657,86 @@ button:focus-visible {
   margin-top: var(--space-3);
 }
 
+/* ── Contact captcha ── */
+
+.contact {
+  max-width: 680px;
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-5);
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.contact__intro {
+  margin-bottom: var(--space-2);
+}
+
+.contact__form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.contact__label {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  font-style: italic;
+  color: var(--muted-text);
+}
+
+.contact__input {
+  font: inherit;
+  font-style: normal;
+  color: var(--text);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  padding: 2px 4px;
+  width: 9ch;
+  outline: none;
+  transition: border-color 120ms ease;
+}
+
+.contact__input:focus {
+  border-bottom-color: var(--accent);
+}
+
+.contact__submit {
+  font: inherit;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--muted-text);
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: color 120ms ease, border-color 120ms ease;
+}
+
+.contact__submit:hover,
+.contact__submit:focus-visible {
+  color: var(--text);
+  border-color: var(--accent);
+  outline: none;
+}
+
+.contact__status {
+  flex-basis: 100%;
+  margin: 0;
+  min-height: 1.5em;
+  color: var(--muted-text);
+  font-size: 15px;
+}
+
+.contact__email {
+  color: var(--accent);
+  font-size: 17px;
+}
+
 .principles {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SectionHeading from '../components/SectionHeading.astro';
 ---
 
 <BaseLayout title="Form — The 王站" canonicalPath="/">
@@ -8,24 +7,14 @@ import SectionHeading from '../components/SectionHeading.astro';
     <div class="container">
       <div class="hero" style="padding-top:var(--space-3);padding-bottom:var(--space-4);">
         <h1 class="hero__name">Alan Wang</h1>
-        <div class="hero__current" style="margin-top:var(--space-4);">
-          <span class="eyebrow" style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-            <span class="sun-disk" style="width:6px;height:6px;"></span>
-            Present focus
-          </span>
-          <p>
-            Creating tools for the social sciences; teaching economics; writing about healthcare and identity; building community in San Francisco, Alta California
-          </p>
-        </div>
       </div>
 
-      <SectionHeading text="Biography" />
       <div class="bio" style="margin-bottom:0;">
         <p>
-          I'm building <a href="https://www.tryintera.com/" target="_blank" rel="noopener noreferrer">Intera</a>, a synthetic persona generation tool for healthcare and market research. I'm also interested in modernizing campaigning software and local journalism.
+          Hi! I'm currently building <a href="https://www.tryintera.com/" target="_blank" rel="noopener noreferrer">Intera</a>, a synthetic persona generation tool for healthcare and market research. We're exploring biologically-inspired memory retrieval and the impact of emotions on human decision-making. I'm also interested in modernizing campaigning software and local journalism.
         </p>
         <p>
-          Before, I was a predoctoral research fellow at MIT Sloan working on cryptocurrency and consumer finance. I studied applied mathematics and economics at Harvard College (AB/SM).
+          Before, I was a predoctoral research fellow at MIT Sloan working on cryptocurrency market microstructure and citation networks. I studied applied mathematics and economics at Harvard College (AB/SM).
         </p>
         <p>
           Most mornings and weekends, I'm usually doing some combination of running, biking, swimming, and weightlifting.
@@ -37,6 +26,85 @@ import SectionHeading from '../components/SectionHeading.astro';
           In previous summers, I conducted biomechanics research with the <a href="https://biewenerlab.oeb.harvard.edu/" target="_blank" rel="noopener noreferrer">Biewener Lab</a> on physiological responses to exertion in cockatiels (<em>Nymphicus Hollandicus</em>). I also interned at a quantitative trading firm.
         </p>
       </div>
+
+      <section class="contact" aria-labelledby="contact-heading">
+        <p id="contact-heading" class="contact__intro">
+          Feel free to contact me at the email below!
+        </p>
+        <form
+          class="contact__form"
+          data-iv="yoOCB0q+g9BrqsrQ"
+          data-ct="hcJXpN2ekywj+cKECjImuvPk2rYRiRKwoC57MQFco2SEQfRkXAo="
+          autocomplete="off"
+          novalidate
+        >
+          <label class="contact__label" for="contact-answer">
+            <span>Attention is all you</span>
+            <input
+              id="contact-answer"
+              class="contact__input"
+              type="text"
+              spellcheck="false"
+              autocapitalize="off"
+              autocorrect="off"
+              aria-describedby="contact-status"
+            />
+          </label>
+          <button class="contact__submit" type="submit">Reveal</button>
+          <p id="contact-status" class="contact__status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
     </div>
   </div>
 </BaseLayout>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('.contact__form');
+  const input = document.querySelector<HTMLInputElement>('#contact-answer');
+  const status = document.querySelector<HTMLParagraphElement>('#contact-status');
+
+  if (form && input && status) {
+    const ivB64 = form.dataset.iv ?? '';
+    const ctB64 = form.dataset.ct ?? '';
+
+    const fromB64 = (s: string) =>
+      Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
+
+    const reveal = (email: string) => {
+      const link = document.createElement('a');
+      link.href = `mailto:${email}`;
+      link.textContent = email;
+      link.className = 'contact__email';
+      status.replaceChildren(link);
+      form.querySelector('.contact__label')?.remove();
+      form.querySelector('.contact__submit')?.remove();
+    };
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const guess = input.value.trim().toLowerCase();
+      if (!guess) return;
+
+      try {
+        const enc = new TextEncoder();
+        const keyBytes = await crypto.subtle.digest('SHA-256', enc.encode(guess));
+        const key = await crypto.subtle.importKey(
+          'raw',
+          keyBytes,
+          { name: 'AES-GCM' },
+          false,
+          ['decrypt'],
+        );
+        const pt = await crypto.subtle.decrypt(
+          { name: 'AES-GCM', iv: fromB64(ivB64) },
+          key,
+          fromB64(ctB64),
+        );
+        reveal(new TextDecoder().decode(pt));
+      } catch {
+        status.textContent = 'Not quite — try again.';
+        input.select();
+      }
+    });
+  }
+</script>
