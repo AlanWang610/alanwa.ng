@@ -56,8 +56,8 @@ export default function DisciplineList({ workouts, tags }: Props) {
               )}
             </div>
             <div className="workout-row__stats tnum">
-              {w.distance !== '—' && <span>{w.distance}</span>}
-              {w.distance !== '—' && (
+              {w.distance !== '-' && <span>{w.distance}</span>}
+              {w.distance !== '-' && (
                 <span style={{ margin: '0 6px', color: 'var(--border)' }}>
                   &middot;
                 </span>
